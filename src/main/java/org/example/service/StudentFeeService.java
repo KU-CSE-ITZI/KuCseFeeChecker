@@ -1,7 +1,7 @@
-package service;
+package org.example.service;
 
-import entity.StudentInfo;
-import repository.StudentFeeRepository;
+import org.example.entity.StudentInfo;
+import org.example.repository.StudentFeeRepository;
 import java.util.Scanner;
 
 public class StudentFeeService {
