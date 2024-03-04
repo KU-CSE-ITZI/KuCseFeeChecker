@@ -94,7 +94,6 @@ public class StudentFeeService {
     // 스캐너 모드를 시작하는 메소드
     private void startScannerMode() {
         System.out.println("스캐너 모드로 전환합니다.");
-        System.out.println("메뉴로 돌아가기 -> q");
 
         while (true) {
             String id;
