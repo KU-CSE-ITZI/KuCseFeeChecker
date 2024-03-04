@@ -199,7 +199,7 @@ public class StudentFeeService {
 
     private String getIsPayedString() {
         System.out.println("힉생회비 납부여부로 판단할 문자열을 넣어주세요. ex) O, 납부함 등등");
-        return scanner.nextLine();
+        return scanner.nextLine().trim();
     }
 
     // todo implement end method
