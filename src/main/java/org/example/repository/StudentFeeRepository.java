@@ -1,8 +1,8 @@
 package org.example.repository;
 
-import org.example.entity.StudentInfo;
 import java.util.HashMap;
 import java.util.List;
+import org.example.entity.StudentInfo;
 
 public class StudentFeeRepository {
 
@@ -31,13 +31,7 @@ public class StudentFeeRepository {
     // todo implement this method
     // id에 해당하는 StudentInfo 객체를 반환하는 메소드
     public StudentInfo getStudentInfo(String id) {
-        //학번이 존재하지 않을때 예외처리
-        StudentInfo studentInfo = studentInfoMap.getOrDefault(id, null);
-        if (studentInfo == null) {
-            System.out.println("일치하는 학번이 존재하지 않습니다.");
-        }
-        return studentInfo;
-
+        return studentInfoMap.getOrDefault(id, null);
     }
 
     // todo implement this method
