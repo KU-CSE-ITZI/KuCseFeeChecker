@@ -128,7 +128,6 @@ public class StudentFeeService {
     // 파일 모드를 시작하는 메소드
     private void startFileMode() {
         System.out.println("파일 모드로 전환합니다.");
-        System.out.println("메뉴로 돌아가기 -> q");
 
         try {
             var fileName = getFileName();
