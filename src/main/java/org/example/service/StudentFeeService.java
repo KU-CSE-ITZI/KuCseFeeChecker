@@ -112,6 +112,7 @@ public class StudentFeeService {
             student = StudentFeeRepository.getInstance().getStudentInfo(id);
 
             if (student == null) {
+                System.out.println("해당 학생의 정보가 없습니다.");
                 continue;
             }
 
