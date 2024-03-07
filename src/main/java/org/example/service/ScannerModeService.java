@@ -9,6 +9,9 @@ public class ScannerModeService {
     Scanner scanner = new Scanner(System.in);
 
     public void start() {
+        
+        StudentFeeRepository.getInstance().initStudentInfo();
+
         System.out.println("\n스캐너 모드로 전환합니다.");
         System.out.println("메뉴로 돌아가기 -> q");
 
