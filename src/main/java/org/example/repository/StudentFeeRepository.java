@@ -36,7 +36,7 @@ public class StudentFeeRepository {
             // 엑셀 파일 읽기
             String fileName = "23.xlsx";
             FileInputStream fileInputStream = new FileInputStream(fileName);
-            Workbook workbook = fileName.endsWith("xlsx")? new XSSFWorkbook(fileInputStream) : new HSSFWorkbook(fileInputStream);
+            Workbook workbook = fileName.endsWith("xlsx") ? new XSSFWorkbook(fileInputStream) : new HSSFWorkbook(fileInputStream);
             // 첫번째 시트(하나밖에 없으므로)
             Sheet sheet = workbook.getSheetAt(0);
             // 각 행(학생 정보)
