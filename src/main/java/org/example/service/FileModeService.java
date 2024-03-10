@@ -27,8 +27,6 @@ public class FileModeService {
         } catch (IOException e) {
             System.out.println("파일을 여는 도중 문제가 생겼습니다.");
         }
-
-        scanner.close();
     }
 
     private String getFileName() {
@@ -54,16 +52,21 @@ public class FileModeService {
         for (int i = 1; i < sheet.getPhysicalNumberOfRows(); i++) {
             var row = sheet.getRow(i);
 
-            var isPayed = row.getCell(isPayedHeaderIndex).getStringCellValue();
+            var isPayed = row.getCell(isPayedHeaderIndex).getStringCellValue().trim();
+            var studentIdCell = row.getCell(studentIdHeaderIndex);
+            studentIdCell.setCellType(CellType.STRING);
+            var studentId = row.getCell(studentIdHeaderIndex).getStringCellValue().trim();
+
             if (!isPayed.equals(isPayedCharacter)) {
+                var studentInfo = StudentFeeRepository.getInstance().getStudentInfo(studentId);
+                if (studentInfo != null && studentInfo.isPayedStudentFee) {
+                    System.out.println(studentId + " - 납부인데 미납으로 체크");
+                }
                 continue;
             }
 
-            var studentIdCell = row.getCell(studentIdHeaderIndex);
-            studentIdCell.setCellType(CellType.STRING);
-            var studentId = row.getCell(studentIdHeaderIndex).getStringCellValue();
             if (StudentFeeRepository.getInstance().getStudentInfo(studentId) == null) {
-                System.out.println(studentId + " - 학생회비 납부 X");
+                System.out.println(studentId + " - 미납인데 납부로 체크");
             }
         }
     }
