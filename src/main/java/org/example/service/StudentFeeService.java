@@ -1,6 +1,8 @@
 package org.example.service;
 
 import java.util.Scanner;
+import org.example.enums.Mode;
+import org.example.service.scanner.ScannerModeService;
 
 public class StudentFeeService {
 

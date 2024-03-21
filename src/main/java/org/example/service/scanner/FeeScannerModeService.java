@@ -1,19 +1,17 @@
-package org.example.service;
+package org.example.service.scanner;
 
 import java.util.Scanner;
 import org.example.entity.StudentInfo;
 import org.example.repository.StudentFeeRepository;
 
-public class ScannerModeService {
+public class FeeScannerModeService {
 
     Scanner scanner = new Scanner(System.in);
 
     public void start() {
-        System.out.println("\n스캐너 모드로 전환합니다.");
-        System.out.println("메뉴로 돌아가기 -> q");
-
+        System.out.println("학생회비 납부 여부 스캐너 모드로 전환합니다.");
         while (true) {
-            System.out.print("바코드를 스캔하세요: ");
+            System.out.print("바코드를 스캔하세요(종료하려면 q를 입력하세요): ");
             String id = scanner.nextLine().trim();
 
             System.out.print("\033[H\033[2J");
