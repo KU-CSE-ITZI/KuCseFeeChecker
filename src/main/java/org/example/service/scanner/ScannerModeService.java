@@ -20,7 +20,6 @@ public class ScannerModeService {
             }
 
             if (mode == Mode.EXIT) {
-                System.out.println("프로그램을 종료합니다.");
                 break;
             }
 
